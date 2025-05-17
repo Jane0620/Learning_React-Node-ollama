@@ -1,0 +1,71 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    --gradient-background: linear-gradient(
+    45deg,
+    #12c2e9,
+    #c471ed,
+    #f64f59,
+    #c471ed,
+    #12c2e9
+  );
+  --gradient-animation: gradientAnimation 15s ease infinite;
+  --border-radius: 20px;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.input-container{
+    position: flex;
+    width: 75%;
+    margin: auto;
+    background-color: rgb(244, 244, 244);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    z-index: 999;
+}
+.input-container textarea{
+    background-color: rgb(231, 230, 230);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 14px;
+    line-height: 16px;
+    padding: 15px;
+    margin: 10px;
+    
+}
+
+
+.messages-container {
+  height: 200px; /* 固定高度 */
+  overflow-y: auto; /* 啟用垂直滾動 */
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.message {
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 80%;
+}
+
+.user-message {
+  background-image: var(--gradient-background);
+  color: white;
+  margin-left: auto; /* 靠右對齊 */
+}
+
+.ai-message {
+  background-color: #f1f1f1;
+  margin-right: auto; /* 靠左對齊 */
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
