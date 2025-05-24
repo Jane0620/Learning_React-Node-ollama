@@ -22,7 +22,7 @@ function ChatInput({ onSendMessage }) {
                 type="text"
                 placeholder="message"
                 rows={5}
-                cols={65}
+                cols={80}
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyDown={handleKeyDown}

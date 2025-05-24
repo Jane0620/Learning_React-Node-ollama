@@ -16,7 +16,7 @@ function prepareRequestData(userMessage) {
 
 export async function getChatResponse(req, res) {
   const userMessage = req.body.message;
-  // console.log("userMessage:", userMessage);
+  console.log("userMessage:", userMessage);
 
   if (!userMessage) {
     return res.status(400).json({ error: "請輸入內容" });
@@ -30,7 +30,7 @@ export async function getChatResponse(req, res) {
     );
 
     const aiResponse = ollamaReponse.data.message.content;
-    // console.log("AI Response:", aiResponse);
+    console.log("AI Response:", aiResponse);
     res.send(aiResponse);// 純文字
   } catch (error) {
     console.error("Error calling Ollama APPI:", error);

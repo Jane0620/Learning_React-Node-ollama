@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import ReactMarkdown from 'react-markdown';
 
 function ChatMessages({ messages }) {
     const messagesContainerRef = useRef(null);
@@ -16,11 +17,10 @@ function ChatMessages({ messages }) {
             {messages.map((message, index) => (
                 <div
                     key={index}
-                    className={`message ${
-                        message.sender === "user" ? "user-message" : "ai-message"
-                    }`}
+                    className={`message ${message.sender === "user" ? "user-message" : "ai-message"
+                        }`}
                 >
-                    {message.text}{/* 確保訊息文字被渲染 */}
+                    {message.sender === "ai" ? (<ReactMarkdown>{message.text}</ReactMarkdown>) : (message.text)}{/* 確保訊息文字被渲染，若訊息來自Ollama，使用Markdown渲染 */}
                 </div>
             ))}
 
