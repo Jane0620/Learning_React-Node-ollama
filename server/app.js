@@ -17,5 +17,5 @@ app.use('/api/chat', chatRouter);
 
 const PORT = process.env.PORT
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server is running http://192.168.1.116: ${PORT}`);
+  console.log(`Server is running ${process.env.VITE_API_BASE_URL}: ${PORT}`);
 });

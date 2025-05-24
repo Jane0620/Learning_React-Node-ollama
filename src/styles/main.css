@@ -34,8 +34,12 @@
 
 
 .messages-container {
-  height: 200px; /* 固定高度 */
-  overflow-y: auto; /* 啟用垂直滾動 */
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 auto;
+  white-space: pre-wrap;
+  height: 200px; 
+  overflow-y: auto; 
   border: 1px solid #ccc;
   padding: 10px;
   margin-bottom: 10px;
@@ -45,18 +49,21 @@
   margin: 5px 0;
   padding: 10px;
   border-radius: 5px;
-  max-width: 80%;
+  position: relative;
+  word-wrap: break-word;
 }
 
 .user-message {
   background-image: var(--gradient-background);
+  background-size: 400% 400%;
   color: white;
-  margin-left: auto; /* 靠右對齊 */
+  margin-left: auto; 
+  max-width: 80%;
 }
 
 .ai-message {
   background-color: #f1f1f1;
-  margin-right: auto; /* 靠左對齊 */
+  margin-right: auto; 
 }
 @keyframes gradientAnimation {
   0% {
