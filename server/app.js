@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import chatRouter from './routes/chat.js';
+import promptRouter from './routes/prompt.js';
 import { fileURLToPath } from 'url';
 import path, { dirname } from "path";
 
@@ -22,6 +23,7 @@ app.use(express.static(frontendPath));
 
 // 路由
 app.use('/api/chat', chatRouter);
+app.use('/api/prompt', promptRouter);
 
 const PORT = process.env.PORT
 app.listen(PORT, '0.0.0.0', () => {
