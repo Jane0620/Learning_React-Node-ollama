@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChatInput } from './components/ChatInput';
 import { ChatMessages } from './components/ChatMessages';
+import { ChatSetting } from './components/ChatSetting';
 import "./styles/main.css";
 
 //Vite 會將以 VITE_ 開頭的變數暴露給客戶端
@@ -42,6 +43,7 @@ function App() {
 
   return (
     <>
+    <ChatSetting></ChatSetting>
       <ChatMessages messages={messages}></ChatMessages>
       <ChatInput onSendMessage={sendMessage}></ChatInput>
     </>
